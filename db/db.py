@@ -42,13 +42,11 @@ class DB:
                 }
             )
 
-    def query_collection(self, collection):
-        records = self.db[collection].find()
+    def query_collection(self, collection, filter_data=None):
+        if filter_data is None:
+            filter_data = {}
+        records = self.db[collection].find(filter_data, {"_id": 0})
         result = []
         for r in records:
-            item = {}
-            for k, v in r.items():
-                if not isinstance(v, ObjectId):
-                    item[k] = v
-            result.append(item)
+            result.append(r)
         return result
