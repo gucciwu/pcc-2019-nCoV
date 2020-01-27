@@ -2,3 +2,10 @@ bs4 >=0.0.1
 lxml >=4.4.2
 requests >=2.22.0
 pymongo >=3.10.1
+tornado
+flask
+flask_cors
+flask_jwt_extended
+flask_restful
+flask_restful_swagger
+flask_pymongo

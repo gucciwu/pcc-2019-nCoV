@@ -4,6 +4,8 @@
 @Author: Jiabao Lin
 @Date: 2020/1/21
 """
+from bson import ObjectId
+from flask import jsonify
 from pymongo import MongoClient
 
 client = MongoClient('mongodb://localhost:27017/')
@@ -39,3 +41,14 @@ class DB:
                     'modifyTime': modify_time
                 }
             )
+
+    def query_collection(self, collection):
+        records = self.db[collection].find()
+        result = []
+        for r in records:
+            item = {}
+            for k, v in r.items():
+                if not isinstance(v, ObjectId):
+                    item[k] = v
+            result.append(item)
+        return result

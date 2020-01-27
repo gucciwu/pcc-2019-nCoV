@@ -7,7 +7,7 @@
 from bs4 import BeautifulSoup
 
 from .countryTypeMap import country_type
-from .db import DB
+from db.db import DB
 import re
 import json
 import time
@@ -15,7 +15,7 @@ import logging
 import datetime
 import requests
 
-from app.parser import regex_parser
+from crawler.parser import regex_parser
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 logger = logging.getLogger(__name__)
