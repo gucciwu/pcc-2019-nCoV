@@ -69,6 +69,12 @@ def get_area_by_city(province_name, city_name):
     return jsonify({'results': ret})
 
 
+@app.route('/api/rumors', methods=['GET'])
+def fetch_rumor():
+    records = db.query_collection('DXYRumor')
+    return jsonify({'results': records})
+
+
 if __name__ == '__main__':
     if platform.system() == "Windows":
         import asyncio
