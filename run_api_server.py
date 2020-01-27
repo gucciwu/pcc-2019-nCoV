@@ -4,7 +4,6 @@ from flask import jsonify
 from tornado.wsgi import WSGIContainer
 from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
-import tornado.options
 import tornado.log
 import logging
 
