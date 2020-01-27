@@ -6,8 +6,8 @@
 """
 from bs4 import BeautifulSoup
 
-from app.countryTypeMap import country_type
-from app.db import DB
+from .countryTypeMap import country_type
+from .db import DB
 import re
 import json
 import time
