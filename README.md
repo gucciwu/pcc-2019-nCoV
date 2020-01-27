@@ -1,4 +1,4 @@
-# 2019新型冠状病毒疫情实时爬虫
+# 2019-nCov Data Service
 Crawler forked from https://github.com/BlankerL/DXY-2019-nCoV-Crawler
 
 #APIs:
