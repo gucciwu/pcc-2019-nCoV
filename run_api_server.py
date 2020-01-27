@@ -27,19 +27,19 @@ class LogFormatter(tornado.log.LogFormatter):
 @app.route('/api/province', methods=['GET'])
 def get_by_province():
     records = db.query_collection('DXYProvince')
-    return jsonify({'result': records})
+    return jsonify({'results': records})
 
 
 @app.route('/api/news', methods=['GET'])
 def get_by_news():
     records = db.query_collection('DXYNews')
-    return jsonify({'result': records})
+    return jsonify({'results': records})
 
 
 @app.route('/api/area', methods=['GET'])
 def get_by_area():
     records = db.query_collection('DXYArea')
-    return jsonify({'result': records})
+    return jsonify({'results': records})
 
 
 if __name__ == '__main__':

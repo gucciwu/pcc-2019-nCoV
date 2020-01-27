@@ -1,5 +1,5 @@
 """
-@ProjectName: DXY-2019-nCoV-Crawler
+@ProjectName: pcc-2019-nCoV
 @FileName: parser.py
 @Author: Jiabao Lin
 @Date: 2020/1/24
