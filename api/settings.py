@@ -1,7 +1,0 @@
-DEFAULT_SECRET_KEY = "7b973e25e0d4478e8128e6055a43707a"
-
-
-class AppConfig(object):
-    SECRET_KEY = DEFAULT_SECRET_KEY
-    SERVER_PORT = 9081
-    LOG_PATH = "logs/pcc/"
