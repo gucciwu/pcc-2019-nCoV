@@ -13,3 +13,5 @@ Crawler forked from https://github.com/BlankerL/DXY-2019-nCoV-Crawler
 #### eg: _http://134.175.136.74:9081/api/area/湖北省/武汉市_
 ## rumor
 #### http://134.175.136.74:9081/api/rumors
+## overall
+#### http://134.175.136.74:9081/api/overall
