@@ -7,7 +7,7 @@
 from pymongo import MongoClient
 
 client = MongoClient('mongodb://localhost:27017/')
-db = client['2019-nCov']
+db = client['pcc_core']
 
 
 class DB:
