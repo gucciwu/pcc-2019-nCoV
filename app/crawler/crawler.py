@@ -97,6 +97,8 @@ class Crawler:
         overall_information['countRemark'] = overall_information['countRemark'].replace(' 疑似', '，疑似').replace(' 治愈', '，治愈').replace(' 死亡', '，死亡').replace(' ', '')
         if not self.db.find_one(collection=AppConfig.DB_COLLECTION_OVERALL, data=overall_information):
             overall_information['updateTime'] = self.crawl_timestamp
+            overall_information['crawlTime'] = self.crawl_timestamp
+
             overall_information = regex_parser(content=overall_information, key='countRemark')
             self.overall_count += 1
             self.db.insert(collection=AppConfig.DB_COLLECTION_OVERALL, data=overall_information)
@@ -128,6 +130,7 @@ class Crawler:
                 continue
             area['country'] = '中国'
             area['updateTime'] = self.crawl_timestamp
+            area['crawlTime'] = self.crawl_timestamp
 
             self.area_count += 1
             self.db.insert(collection=AppConfig.DB_COLLECTION_AREA, data=area)
@@ -150,7 +153,7 @@ class Crawler:
             if self.db.find_one(collection=AppConfig.DB_COLLECTION_AREA, data=country):
                 continue
             country['updateTime'] = self.crawl_timestamp
-
+            country['crawlTime'] = self.crawl_timestamp
             self.area_count += 1
             self.db.insert(collection=AppConfig.DB_COLLECTION_AREA, data=country)
 
