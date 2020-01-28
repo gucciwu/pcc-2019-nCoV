@@ -10,4 +10,7 @@ class AppConfig(object):
     DB_COLLECTION_RUMOR = 'DXYRumor'
     DB_COLLECTION_PROVINCE = 'DXYProvince'
     DB_COLLECTION_OVERALL = 'DXYOverall'
+    DB_COLLECTION_STR = 'mongodb://localhost:27017/'
+    DB_DATABASE = 'pcc_core'
+    CRAWLER_FREQUENCY = 60  # in seconds
 

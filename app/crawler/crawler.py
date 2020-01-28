@@ -41,7 +41,7 @@ class Crawler:
     def run(self):
         while True:
             self.crawler()
-            time.sleep(60)
+            time.sleep(AppConfig.CRAWLER_FREQUENCY)
 
     def crawler(self):
         while True:
