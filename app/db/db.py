@@ -26,7 +26,7 @@ class DB:
         if filter_data is None:
             filter_data = {}
         if sort_data is None:
-            sort_data = [('updateTIme', -1)] \
+            sort_data = [('updateTime', -1)] \
                 if collection in (AppConfig.DB_COLLECTION_AREA, AppConfig.DB_COLLECTION_OVERALL) \
                 else [('crawlTime', -1)]
         if limit is None:
