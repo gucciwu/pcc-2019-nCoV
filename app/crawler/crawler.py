@@ -11,6 +11,7 @@ import time
 import logging
 import datetime
 import requests
+from urllib3.exceptions import ProtocolError
 
 from app.crawler.countryTypeMap import country_type
 from app.crawler.parser import regex_parser
@@ -40,8 +41,12 @@ class Crawler:
 
     def run(self):
         while True:
-            self.crawl()
-            time.sleep(AppConfig.CRAWLER_FREQUENCY)
+            try:
+                self.crawl()
+            except Exception as err:
+                logger.error(err)
+            finally:
+                time.sleep(AppConfig.CRAWLER_FREQUENCY)
 
     def crawl(self):
         # reset counters
@@ -52,7 +57,11 @@ class Crawler:
         self.rumor_count = 0
 
         self.crawl_timestamp = int(datetime.datetime.timestamp(datetime.datetime.now()) * 1000)
-        r = self.session.get(url=self.url)
+        try:
+            r = self.session.get(url=self.url)
+        except ProtocolError as err:
+            logger.error(err)
+            raise ProtocolError
         soup = BeautifulSoup(r.content, 'lxml')
         overall_information = re.search(r'\{("id".*?)\}',
                                         str(soup.find('script', attrs={'id': 'getStatisticsService'})))
