@@ -80,7 +80,7 @@ class Crawler:
                            % (rumor_resp.status_code, rumor_resp.reason))
             rumor_information = None
 
-        self.overall_parser(overall_information=overall_information)
+        # self.overall_parser(overall_information=overall_information)
         self.province_parser(province_information=province_information)
         self.area_parser(area_information=area_information)
         self.abroad_parser(abroad_information=abroad_information)
